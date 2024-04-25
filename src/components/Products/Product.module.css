@@ -1,0 +1,25 @@
+.product{
+    overflow: hidden;
+}
+
+.product:hover{
+    cursor: pointer;
+}
+
+.product > img:hover{
+    filter: opacity(50%) blur(1px);
+    transform: scale(1.1);
+}
+
+.product > img{
+    width: 100%;
+    transition: all 0.4s;
+}
+
+.product h6{
+    font-size: 17px;
+}
+
+.product p{
+    font-size: 15px;
+}

@@ -1,0 +1,7 @@
+.other-info h4, .other-info p{
+    margin: 0;
+}
+
+.other-info button, .other-info input{
+    border-radius: 0 !important;
+}

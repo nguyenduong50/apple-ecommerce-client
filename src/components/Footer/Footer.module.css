@@ -1,0 +1,33 @@
+footer{
+    background-color: #000;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-style: italic;
+    margin-top: 70px;
+}
+
+footer h5{
+    margin-bottom: 30px;
+}
+
+footer ul li{
+    padding: 5px 0;
+}
+
+footer a{
+    color: rgb(116, 116, 116) !important;
+    display: block;
+}
+
+footer a:hover{
+    color: rgb(233, 231, 231) !important;
+}
+
+footer div{
+    max-width: 1140px !important;
+}
+
+footer ul{
+    padding-left: 0;
+}

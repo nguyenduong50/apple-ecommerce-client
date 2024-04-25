@@ -1,0 +1,22 @@
+.product-details-popup{
+    position: relative;
+}
+
+.product-details-popup img{
+    width: 100%;
+}
+
+.product-details-popup button{
+    border-radius: 0;
+}
+
+.product-details-popup .btn-hide-popup{
+    border: none;
+    background-color: transparent;
+    color: #ccc;
+    font-size: 22px;
+    font-weight: 600;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}

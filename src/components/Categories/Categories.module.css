@@ -1,0 +1,33 @@
+#categories h5{
+    color: #ccc;
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+#categories h3{
+    font-style: italic;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#categories .first-line img{
+    width: 48.5%;
+}
+
+#categories div > * {
+    padding: 0;
+}
+
+#categories .second-line > img {
+    width: 32%;
+}
+
+#categories img{
+    transition: all 0.3s;
+}
+
+#categories img:hover{
+    filter: opacity(60%) blur(1px);
+    cursor: pointer;
+}

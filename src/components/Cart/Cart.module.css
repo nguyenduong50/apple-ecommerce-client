@@ -1,0 +1,10 @@
+.cart table img{
+    max-width: 80px;
+}
+
+@media (min-width: 1024px){
+    #col-cart-total{
+        width: 31%;
+    }
+}
+

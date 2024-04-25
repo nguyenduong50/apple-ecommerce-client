@@ -1,0 +1,18 @@
+.image-small img{
+    width: 65%;
+}
+
+.image-large img{
+    width: 100%;
+}
+
+.product-related img{
+    width: 100%;
+    cursor: pointer;
+}
+
+#input-amount{
+    top: 50%;
+    left: 38%;
+    transform: translate(-100%, -50%);
+}

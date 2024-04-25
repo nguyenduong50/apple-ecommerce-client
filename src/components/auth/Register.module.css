@@ -1,0 +1,32 @@
+.register{
+    background-image: url(../../assets/images/banner1.jpg);
+    background-size: contain;
+    height: 90vh;
+    position: relative;
+}
+
+.form-register{
+    background-color: #fff;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 10px 8px 10px 5px rgba(132, 132, 133, 0.2);;
+}
+
+.form-register input{
+    padding: 20px 15px;
+    width: 300px;
+}
+
+.form-register input:focus-visible{
+    outline: none;
+}
+
+.form-register button{
+    font-size: 14px;
+}
