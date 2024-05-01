@@ -61,7 +61,7 @@ const OrderDetails = () => {
                     <img src={`http://localhost:5000/${product.image}`} alt="product" width="70px" />
                   </td>
                   <td className="text-center align-middle text-wrap fst-italic text-body-tertiary fs-6">
-                    {order.name}
+                    {product.name}
                   </td>
                   <td className="text-center align-middle text-wrap fst-italic text-body-tertiary fs-6">
                     {product.price.toLocaleString("it-IT", {

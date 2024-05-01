@@ -82,7 +82,7 @@ const MainShop = ({data}) => {
                         listProduct.length > 0 &&
                         <div className="row mt-3">
                             {                            
-                                listProduct.map((product, index) => (                                    
+                                listProduct?.map((product, index) => (                                    
                                     <ProductItem key={index} product={product} />                                  
                                 ))
                             }

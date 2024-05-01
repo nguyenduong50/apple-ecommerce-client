@@ -1,4 +1,4 @@
-import classes from "./Footer.module.css";
+// import classes from "./Footer.module.css";
 
 const Footer = () => {
   return (
@@ -9,16 +9,16 @@ const Footer = () => {
                 <h5 className="text-uppercase">customer services</h5>
                 <ul>
                     <li>
-                        <a href="#">Help & Contact Us</a>
+                        <a href="google.com">Help & Contact Us</a>
                     </li>
                     <li>
-                        <a href="#">Returns & Refunds</a>
+                        <a href="google.com">Returns & Refunds</a>
                     </li>
                     <li>
-                        <a href="#">Online Stores</a>
+                        <a href="google.com">Online Stores</a>
                     </li>
                     <li>
-                        <a href="#">Tems & Conditions</a>
+                        <a href="google.com">Tems & Conditions</a>
                     </li>
                 </ul>
             </div>
@@ -26,16 +26,16 @@ const Footer = () => {
                 <h5 className="text-uppercase">company</h5>
                 <ul>
                     <li>
-                        <a href="#">What We Do</a>
+                        <a href="google.com">What We Do</a>
                     </li>
                     <li>
-                        <a href="#">Available Services</a>
+                        <a href="google.com">Available Services</a>
                     </li>
                     <li>
-                        <a href="#">Latest Post</a>
+                        <a href="google.com">Latest Post</a>
                     </li>
                     <li>
-                        <a href="#">FAQs</a>
+                        <a href="google.com">FAQs</a>
                     </li>
                 </ul>
             </div>
@@ -43,16 +43,16 @@ const Footer = () => {
                 <h5 className="text-uppercase">social media</h5>
                 <ul>
                     <li>
-                        <a href="#">Twitter</a>
+                        <a href="google.com">Twitter</a>
                     </li>
                     <li>
-                        <a href="#">Instagram</a>
+                        <a href="google.com">Instagram</a>
                     </li>
                     <li>
-                        <a href="#">Facebook</a>
+                        <a href="google.com">Facebook</a>
                     </li>
                     <li>
-                        <a href="#">Printerest</a>
+                        <a href="google.com">Printerest</a>
                     </li>
                 </ul>
             </div>

@@ -13,7 +13,7 @@ const cartSlice = createSlice({
             state.items = JSON.parse(localStorage.getItem("cart")) ?? [];
 
             //Find exist cart item
-            const currentUser = localStorage.getItem('currentUser');          
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));          
             let existingCartItemIndex = -1;
 
             for(let index in state.items){
@@ -74,6 +74,11 @@ const cartSlice = createSlice({
 
             if(action.payload.amount === -1 ){
                 state.items[action.payload.index].totalPrice = state.items[action.payload.index].totalPrice - state.items[action.payload.index].price;
+            }
+
+            if(state.items[action.payload.index].amount >= state.items[action.payload.index].available){
+                state.items[action.payload.index].amount = 1;
+                state.items[action.payload.index].totalPrice = state.items[action.payload.index].price;
             }
 
             if(state.items[action.payload.index].amount <= 0){

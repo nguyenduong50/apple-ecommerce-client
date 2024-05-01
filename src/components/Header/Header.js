@@ -1,5 +1,5 @@
 import MainNavigation from '../MainNavigation/MainNavigation';
-import classes from './Header.module.css';
+// import classes from './Header.module.css';
 
 const Header = () => {
     return(

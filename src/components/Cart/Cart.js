@@ -28,7 +28,7 @@ const Cart = () => {
         let bill_tempo = 0;
 
         for(let index in cart){
-            if(cart[index].userId === currentUser._id){
+            if(cart[index].userId === currentUser?._id){
                 bill_tempo += cart[index].totalPrice; 
             }    
         }

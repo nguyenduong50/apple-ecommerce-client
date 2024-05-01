@@ -8,11 +8,16 @@ import Popup from '../UI/Popup/Popup';
 const DetailsProduct = ({product}) => {
     const dispatch = useDispatch();
     // const amountProduct = useRef();
-    const [amountProduct, setAmountProduct] = useState(1);   
+    const [amountProduct, setAmountProduct] = useState(0);   
     const [isPopup, setIsPopup] = useState(false);
     const navigate = useNavigate();
 
     const changeAmount = (amount) => {
+        if(amountProduct >= product.quantity){
+            setAmountProduct(product.quantity);
+            return;
+        }
+
         if(amountProduct <= 1){
             amount = 1;
         }
@@ -25,7 +30,9 @@ const DetailsProduct = ({product}) => {
 
     const addCartHandler = (event) => {
         event.preventDefault();
-
+        if(amountProduct <= 0){
+            return;
+        }
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
         const accessToken = localStorage.getItem('accessToken');
         if(!currentUser || !accessToken){
@@ -39,6 +46,7 @@ const DetailsProduct = ({product}) => {
             name: product.name,
             price: parseFloat(product.price),
             amount: parseInt(amountProduct),
+            available: product.quantity,
             totalPrice: parseFloat(product.price) * parseInt(amountProduct),
             userId: currentUser._id
         }));
@@ -68,7 +76,11 @@ const DetailsProduct = ({product}) => {
                         <span className="fw-bold fst-italic">CATEGORY: </span>
                         <span className="fst-italic">{product.category}</span>
                     </div>
-                    <form onSubmit={addCartHandler} className="input-group mt-3 mb-3">
+                    <div className="mt-2">
+                        <span className="fw-bold fst-italic">Product Available: </span>
+                        <span className="fst-italic">{product.quantity}</span>
+                    </div>
+                    <form onSubmit={addCartHandler} className="input-group mt-1 mb-3">
                         <span className="col-5 positon-relative ">
                             {/* <input 
                                 type="number" 
