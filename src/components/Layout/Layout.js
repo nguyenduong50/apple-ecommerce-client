@@ -14,7 +14,7 @@ const Layout = () => {
     const navigate = useNavigate();
     let socket = socketIOClient('http://localhost:5000', {credentials: 'includes'});
 
-    const showChatHandler = async() => {
+    const showChatHandler = () => {
         if(!currentUser){
             navigate('/login');
             return;
@@ -22,53 +22,21 @@ const Layout = () => {
         setIsChat(!isChat);
 
         if(!isChat){
-            const response = await fetch(
-                'http://localhost:5000/v2/roomchat',
-                {
-                    credentials: 'include'
-                }
-            );
-            const data = await response.json();
-            const roomExisted = data.find(room => room.userId.toString() === currentUser._id)
-
-            if(!roomExisted){
-                const roomChat = {
-                    name: currentUser.name,
-                    userId: currentUser._id
-                }
-        
-                const newRoomIdResponse = await fetch(
-                    'http://localhost:5000/v2/roomchat',
-                    {
-                        method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(roomChat),
-                        credentials: 'include'
-                    }
-                )
-                const newRoomId = await newRoomIdResponse.json();
-                socket.emit('join-room', newRoomId);
-                localStorage.setItem('roomChatId', newRoomId._id);
-            }
-
-            if(roomExisted){
-                socket.emit('join-room', roomExisted._id);
-                localStorage.setItem('roomChatId', roomExisted._id);
-            }
+            socket.emit('add-user-online', currentUser);
         }
 
-        setMessages([]);
+        if(isChat){
+            socket.emit('remove-user-online', currentUser);
+        }
     }
 
     
     const messageHandle = async() => {
         if(message !== ''){
             const messageReq = {
-                roomId: localStorage.getItem('roomChatId'),
                 userId: currentUser?._id,
-                content: message
+                content: message,
+                isAdmin: false
             }
 
             await fetch(
@@ -96,11 +64,15 @@ const Layout = () => {
     }
 
     useEffect(() => {
-        socket.on('response-message', data => {
-            if(data.userId !== currentUser?._id){
+        socket.on('get-message', data => {
+            if(data.userId === currentUser?._id){
                 setMessages(prev => prev.concat({message: data.content, isAdmin: true}))
             }
         })
+
+        return () => {
+            socket.off('get-message');
+        };
     },[socket, currentUser])
 
     return(
