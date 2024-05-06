@@ -5,6 +5,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import classes from './Layout.module.css';
 import socketIOClient from 'socket.io-client'
 // import { createRandomString } from '../../Util/randomString';
+import { API_ROOT } from '../../Util/const';
 
 const Layout = () => {
     const [isChat, setIsChat] = useState(false);
@@ -12,7 +13,7 @@ const Layout = () => {
     const [messages, setMessages] = useState([]);
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const navigate = useNavigate();
-    let socket = socketIOClient('http://localhost:5000', {credentials: 'includes'});
+    let socket = socketIOClient(API_ROOT, {credentials: 'includes'});
 
     const showChatHandler = () => {
         if(!currentUser){
@@ -40,7 +41,7 @@ const Layout = () => {
             }
 
             await fetch(
-                'http://localhost:5000/v2/message',
+                `${API_ROOT}/v2/message`,
                 {
                     method: 'POST',
                     headers: {

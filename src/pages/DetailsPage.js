@@ -3,6 +3,7 @@ import DetailsProduct from "../components/Products/DetailsProduct";
 import { Await, defer, useLoaderData, json } from "react-router-dom";
 import Banner from "../components/Banner/Banner";
 import ProductRelatedList from '../components/Products/ProductRelatedList';
+import { API_ROOT } from "../Util/const";
 
 const DetailsPage = () => {
     const {data} = useLoaderData();
@@ -29,7 +30,7 @@ const DetailsPage = () => {
 export default DetailsPage;
 
 async function loadProduct(slug){
-    const response = await fetch('http://localhost:5000/v2/product/' + slug);
+    const response = await fetch(API_ROOT + '/v2/product/' + slug);
     
     if(!response.ok){
         throw json(

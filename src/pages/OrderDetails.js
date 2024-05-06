@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Banner from "../components/Banner/Banner";
+import { API_ROOT } from "../Util/const";
 
 const OrderDetails = () => {
   const params = useParams();
@@ -8,7 +9,7 @@ const OrderDetails = () => {
 
   useEffect(() => {
     const fetchOrderDetails = async (id) => {
-      const response = await fetch(`http://localhost:5000/v2/order/${id}`, {
+      const response = await fetch(`${API_ROOT}/v2/order/${id}`, {
         credentials: "include",
       });
 

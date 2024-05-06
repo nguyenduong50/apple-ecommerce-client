@@ -1,5 +1,6 @@
 import Register from '../components/auth/Register';
 import { redirect } from "react-router-dom";
+import { API_ROOT } from '../Util/const';
 
 const RegisterPage = () => {
   return <Register />;
@@ -32,7 +33,7 @@ export async function action({request}){
     }
 
     const response = await fetch(
-      'http://localhost:5000/v2/auth/register',
+      `${API_ROOT}/v2/auth/register`,
       {
         method: 'POST',
         headers: {

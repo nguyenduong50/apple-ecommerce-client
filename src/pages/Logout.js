@@ -1,8 +1,9 @@
 import { redirect } from "react-router-dom";
+import { API_ROOT } from "../Util/const";
 
 export async function action(){
     await fetch(
-        'http://localhost:5000/v2/auth/logout',
+        `${API_ROOT}/v2/auth/logout`,
         {
             credentials: 'include'
         }

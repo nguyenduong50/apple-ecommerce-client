@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { cartActions } from "../../store";
+import { API_ROOT } from "../../Util/const";
 
 const Checkout = () => {
     const cart = useSelector(state => state.cart.items);
@@ -32,7 +33,7 @@ const Checkout = () => {
             productOrder: productOrder
         }
         const response = await fetch(
-            'http://localhost:5000/v2/order',
+            `${API_ROOT}/v2/order`,
             {
                 method: 'POST',
                 headers: {

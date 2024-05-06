@@ -3,6 +3,7 @@ import classes from './Cart.module.css';
 import { Link, useNavigate } from "react-router-dom";
 import {cartActions} from '../../store';
 import { useEffect, useState } from "react";
+import { API_ROOT } from "../../Util/const";
 
 const Cart = () => {
     const navigate = useNavigate();
@@ -60,7 +61,7 @@ const Cart = () => {
                                         product.userId === currentUser?._id &&
                                         <tr key={index} className="">
                                             <td className="text-center align-middle">
-                                                <img src={`http://localhost:5000/${product.image}`} alt="product"/>
+                                                <img src={`${API_ROOT}/${product.image}`} alt="product"/>
                                             </td>
                                             <td className="text-center align-middle text-wrap fst-italic">{product.name}</td>
                                             <td className="text-center align-middle text-wrap fst-italic text-body-tertiary">{product.price.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</td>

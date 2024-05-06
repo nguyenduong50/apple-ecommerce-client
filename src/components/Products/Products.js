@@ -4,6 +4,8 @@ import { useLoaderData } from 'react-router-dom';
 import classes from './Products.module.css';
 import Product from './Product';
 
+import { API_ROOT } from '../../Util/const';
+
 const Products = () => {
     const data = useLoaderData();
     const [products, setProducts] = useState([]);
@@ -15,7 +17,7 @@ const Products = () => {
                 id: key,
                 name: data[key].name,
                 slug: data[key].slug,
-                img1: 'http://localhost:5000/' + data[key].images[0],
+                img1: API_ROOT + data[key].images[0],
                 price: parseFloat(data[key].price).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}),
                 short_desc: data[key].shortDescription
             })

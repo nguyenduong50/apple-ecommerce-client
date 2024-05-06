@@ -4,6 +4,7 @@ import Categories from "../components/Categories/Categories";
 import Products from "../components/Products/Products";
 import OtherInfo from "../components/OtherInfo/OtherInfo";
 import { json } from "react-router-dom";
+import { API_ROOT } from "../Util/const";
 
 const HomePage = () => {
     return (
@@ -19,7 +20,7 @@ const HomePage = () => {
 export default HomePage;
 
 export async function loader(){
-    const response = await fetch('http://localhost:5000/v2/product');
+    const response = await fetch(API_ROOT + '/v2/product');
 
     if(!response.ok){
         throw json(

@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { redirect } from "react-router-dom";
 import Login from '../components/auth/Login';
+import { API_ROOT } from "../Util/const";
 
 const LoginPage = () => {
     return (
@@ -28,7 +29,7 @@ export async function action({request}){
     }
 
     const response = await fetch(
-      'http://localhost:5000/v2/auth/login/',
+      `${API_ROOT}/v2/auth/login/`,
       {
         method: 'POST',
         headers: {

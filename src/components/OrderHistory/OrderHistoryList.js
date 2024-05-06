@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import { API_ROOT } from "../../Util/const";
 
 const OrderHistoryList = () => {
     const [orders, setOrders] = useState([]);
@@ -12,7 +13,7 @@ const OrderHistoryList = () => {
     useEffect(() => {
         const fetchOrder = async() => {
           const response = await fetch(
-            'http://localhost:5000/v2/order',
+            `${API_ROOT}/v2/order`,
             {
               credentials: 'include'
             }

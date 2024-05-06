@@ -4,6 +4,7 @@ import { useState } from 'react';
 import {cartActions} from '../../store';
 import { useDispatch } from 'react-redux';
 import Popup from '../UI/Popup/Popup';
+import { API_ROOT } from '../../Util/const';
 
 const DetailsProduct = ({product}) => {
     const dispatch = useDispatch();
@@ -59,13 +60,13 @@ const DetailsProduct = ({product}) => {
             <div className="row">
                 <div className="col-md-6 row">
                     <div className={`${classes["image-small"]} col-3 px-0`}>
-                        <img src={`http://localhost:5000/${product.images[0]}`} className="mb-2 ms-3" alt="apple"/>
-                        <img src={`http://localhost:5000/${product.images[1]}`} className="mb-2 ms-3" alt="apple"/>
-                        <img src={`http://localhost:5000/${product.images[2]}`} className="mb-2 ms-3" alt="apple"/>
-                        {product.images[3] && <img src={`http://localhost:5000/${product.images[3]}`} className="mb-2 ms-3" alt="apple"/>}
+                        <img src={`${API_ROOT}/${product.images[0]}`} className="mb-2 ms-3" alt="apple"/>
+                        <img src={`${API_ROOT}/${product.images[1]}`} className="mb-2 ms-3" alt="apple"/>
+                        <img src={`${API_ROOT}/${product.images[2]}`} className="mb-2 ms-3" alt="apple"/>
+                        {product.images[3] && <img src={`${API_ROOT}/${product.images[3]}`} className="mb-2 ms-3" alt="apple"/>}
                     </div>
                     <div className={`${classes["image-large"]} col-9 px-0`}>
-                        <img src={`http://localhost:5000/${product.images[0]}`} alt="apple" />
+                        <img src={`${API_ROOT}/${product.images[0]}`} alt="apple" />
                     </div>
                 </div>
                 <div className="col-md-6 mt-2 ms-4">
