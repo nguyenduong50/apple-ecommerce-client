@@ -17,7 +17,7 @@ const Products = () => {
                 id: key,
                 name: data[key].name,
                 slug: data[key].slug,
-                img1: API_ROOT + data[key].images[0],
+                img1: API_ROOT + '/' + data[key].images[0],
                 price: parseFloat(data[key].price).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}),
                 short_desc: data[key].shortDescription
             })
